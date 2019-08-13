@@ -21,5 +21,5 @@ def chat(request):
         return redirect('chat')
     else:
         form = ChatForm()
-        data = Chat.objects.all().order_by('-timeStamp')
+        data = Chat.objects.all().order_by('timeStamp')
         return render(request,'CamCon/chat.html',{'dataset': data, 'form':form})
